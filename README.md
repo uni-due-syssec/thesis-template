@@ -6,6 +6,7 @@ Clone the git and compile with `latexmk`. The produced files are in the build di
 * fixing the headers of the texfiles 
 * delete useless packages
 * Logo
+* Acronym / Glossaries
 
 
 ## Mandatory things you need to install to use the template
