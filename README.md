@@ -3,8 +3,7 @@ Clone the git and compile with `latexmk`. The produced files are in the build di
 
 ## TODO List
 * writing descriptions
-* fixing the headers of the texfiles 
-* delete useless packages
+* fixing the headers of the report class
 * Logo
 * Acronym / Glossaries
 
@@ -14,12 +13,17 @@ Clone the git and compile with `latexmk`. The produced files are in the build di
 * latexmk
 * biber
 
-Install missing packages with tlmgr 
+Install missing packages with tlmgr. The `needed_package.sh` script will print you the required packages.
 
 ```bash
-tlmgr install missingpackage.sty
+$tlmgr install missingpackage.sty
 ```
 
-Also if you are lazy you can use the install_packages script, which downloads the needed packages for you. 
+If tlmgr can not find the right packages, you can download them manually. 
+
+If you dont know where to find the packages you can also use the `needed_packages.sh` script for debian base systems
+
+You are free to modify this template. 
+
 
 

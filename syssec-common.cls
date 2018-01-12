@@ -279,13 +279,9 @@
 
 
 \RequirePackage{hyperxmp}
-
 \RequirePackage[utf8]{inputenc}
-
 \RequirePackage{fancyhdr}
-%\RequirePackage{scrpage2}
 \RequirePackage[hyphens]{url}
-%\RequirePackage{scrhack} % fix komascript floattolist issues
 \RequirePackage[defernumbers=true, style=alphabetic, citestyle=alphabetic, giveninits=true, backend=biber, doi=true, url=true, block=ragged, maxnames=6]{biblatex} %
 \RequirePackage{csquotes} % context sensitive quotations; especially for use with biblatex and biber
 \RequirePackage{listings} % ?
@@ -304,6 +300,7 @@
 \hypersetup{pdfencoding=auto, colorlinks=true, linktocpage=true, breaklinks=true, bookmarksnumbered, bookmarksopen=true,bookmarksopenlevel=1, pdfhighlight=/O, urlcolor=webbrown, linkcolor=linkblue, citecolor=webgreen}
 \RequirePackage{textcomp} % extra symbols; used for euro and copyright symbol
 \RequirePackage[load-configurations={abbreviations,binary}]{siunitx}
+\RequirePackage{siunitx}
 \sisetup{load-configurations = abbreviations,binary-units}
 \RequirePackage{xspace} % ?
 \RequirePackage{algorithmic}
