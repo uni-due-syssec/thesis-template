@@ -21,8 +21,6 @@ $tlmgr install missingpackage.sty
 
 If tlmgr can not find the right packages, you can download them manually. 
 
-If you dont know where to find the packages you can also use the `needed_packages.sh` script for debian base systems
-
 You are free to modify this template. 
 
 
