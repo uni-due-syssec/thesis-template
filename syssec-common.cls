@@ -134,7 +134,7 @@
 \newcommand{\@titlelogos}{
 	\includegraphics[height=2cm]{graphics/uni-due-logo-cmyk.eps}
 	\hfill
-	\includegraphics[height=2cm]{graphics/bug-sec.png}
+	% \includegraphics[height=2cm]{graphics/bug-sec.png}
 }
 
 \newcommand{\affidavit}{
@@ -311,7 +311,6 @@
 \RequirePackage{titlesec}
 \RequirePackage{textcase} % for \MakeTextUppercase
 \RequirePackage{mathtools}
-
 
 \RequirePackage{metalogo}
 

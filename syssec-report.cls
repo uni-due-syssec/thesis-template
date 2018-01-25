@@ -13,7 +13,7 @@
 
 \LoadClass[twosided = false, openright,titlepage,numbers=noenddot,cleardoublepage=empty,BCOR=5mm,a4paper,fontsize=12pt, DIV=calc]{scrreprt}
 
-\ProvidesClass{syssec-report}[2017/12/29 Uni-DUE SYSSEC report class]
+\ProvidesClass{classes/syssec-report}[2017/12/29 Uni-DUE SYSSEC report class]
 
 \input{syssec-common.cls}
 
@@ -22,7 +22,7 @@
 % LaTeX parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[nomain, style=tree, toc, section=chapter, nogroupskip=true]{glossaries}
+\RequirePackage[acronyms, nomain, style=tree, toc, section=chapter, nogroupskip=true]{glossaries}
 
 \def\toc@heading{
  	\chapter*{\contentsname}
