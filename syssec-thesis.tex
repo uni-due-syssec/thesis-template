@@ -1,4 +1,4 @@
-\documentclass[bachelorthesis, english]{syssec-thesis} % 				 Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
+\documentclass[masterthesis, english]{syssec-thesis} % 				 Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
 
 \makeglossaries
 
@@ -47,23 +47,19 @@
 
 
 \newpage
-\begingroup % printglossar{y,ies} forces a cleardoublepage between glossaries and after it, we supress this here
-	\let\clearpage\relax
-	\printglossaries
-\endgroup
+\printglossaries
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Reset the page counter for the actual content
+
 \cleardoublepage
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \input{chapters/chapter01.tex}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -72,7 +68,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \input{chapters/chapter03.tex}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -85,7 +80,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \input{chapters/chapter06.tex}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -101,8 +95,5 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \printbibliography[heading=bibintoc]
-
-
-
 
 \end{document}

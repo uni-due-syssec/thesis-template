@@ -3,7 +3,7 @@
 
 echo "needed packages:"
 
-cat *.cls | sed -n 's~^[^%]*\\RequirePackage[^{]*{\([^}]*\)}.*$~\1.sty~p' 
+cat *.cls | sed -n 's~^[^%]*\\RequirePackage[^{]*{\([^}]*\)}.*$~\1.sty~p' | sort -u
 
 
 # where you can find the required packages in apt
