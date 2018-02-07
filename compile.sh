@@ -1,6 +1,6 @@
 #! /bin/sh 
 if [ -z "$1" ]; then
-    echo "usage: ./compile.sh file-to-compile"
+    echo "usage: ./compile.sh file-to-compile (without file suffix)"
     exit 1
 fi
 
