@@ -23,13 +23,21 @@ We recommend you to use the provided Dockerfile to ease your use of this templat
 We also provide you with the `compile.sh` script, which automatically compiles and copies the template for you. Step 1 is **mandatory**.
 
 
-## Things you need to install to use the template
+## Packages you need to install to use the template
 
-* texlive
+If you are on a Debian based system, install these packages from the repositories
+
+* texlive-base
+* texlive-latex-recommended
+* texlive-latex-extra
+* texlive-science
+* texlive-bibtex-extra
 * latexmk
 * biber
 
-Install missing packages with tlmgr. The `needed_package.sh` script will print you the required packages.
+You will also need the `ccicons` and `tracklang` package. Both can be found in the tlmgr repositories.
+
+The `needed_package.sh` script will print you the used packages.
 
 ```bash
 $tlmgr install missingpackage.sty
@@ -46,4 +54,3 @@ Every `.tex` file contains small manuals on how to use it.
 You are free to modify this template.
 
 If you want to compile your files, just invoke `latexmk` which will do the work for you. To clean up, just use `latexmk -c`. This will leave only the PDF file in the folder. 
-

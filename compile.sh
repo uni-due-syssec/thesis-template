@@ -4,5 +4,5 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-docker run syssec/tex latexmk $1
+docker run --rm syssec/tex latexmk -f $1
 docker cp $(docker ps -alq):/syssec-build/$1.pdf .
