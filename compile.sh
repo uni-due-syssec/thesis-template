@@ -6,3 +6,4 @@ fi
 
 docker run --rm syssec/tex latexmk -f $1
 docker cp $(docker ps -alq):/syssec-build/$1.pdf .
+latexmk -C
