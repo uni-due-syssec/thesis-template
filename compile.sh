@@ -4,6 +4,14 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-docker run --rm syssec/tex latexmk -f $1
+# Builds a container with the files in the directory
+docker build -t syssec/tex -f Dockerfile .
+
+# Runs latexmk in the container
+docker run syssec/tex latexmk -f $1
+
+# Copies the pdf into the directory
 docker cp $(docker ps -alq):/syssec-build/$1.pdf .
-latexmk -C
+
+# kills the container
+docker stop $(docker ps -alq)

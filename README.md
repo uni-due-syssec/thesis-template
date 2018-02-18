@@ -7,20 +7,23 @@ If you run into any issues with this template, open a new issue on github. Thank
 
 ## Compile
 
-We recommend you to use the provided Dockerfile to ease your use of this template. 
-
+We recommend you to use the provided Dockerfile to ease your use of this template.
 
 0. [install Docker](https://docs.docker.com/install/)
 
-1. Build the docker with `$docker build -t syssec/tex .`
+1. Build the setup container with `$ docker build -t syssec/tex-setup -f Dockerfile.setup .` This needs only to be done once.
 
-2. Invoke `latexmk` in the docker container with 
+2. Now build the main container with `$ docker build -t syssec/tex -f Dockerfile .` This needs to be repeated after every change in your file
+
+3. Invoke `latexmk` in the docker container with 
 `$ docker run syssec/tex latexmk [flags] file-to-compile`
 
-3. Copy your compiled pdf from the container to the host system with 
-`docker cp container-id:/syssec-build/file-to-compile.pdf`
+4. Copy your compiled pdf from the container to the host system with 
+`docker cp container-id:/syssec-build/file-to-compile.pdf`. You get the container ID from the last built container with `$ docker ps -alq`
 
-We also provide you with the `compile.sh` script, which automatically compiles and copies the template for you. Step 1 is **mandatory**.
+We also provide you with the `compile.sh` script, which automatically compiles and copies the template for you. So you dont have to bother with step 2 to 4. Step 1 remains **mandatory**.
+
+To use the script just use `$ sh compile.sh syssec-thesis`.
 
 
 ## Packages you need to install to use the template
