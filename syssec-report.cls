@@ -33,7 +33,7 @@
 \newcommand{\sectionbreak}{\clearpage}
 
 %
-\lfoot[\@stringTitle]{\@stringTitle}
+\lfoot[\@stringTitle]{\@title}
 \pagestyle{fancy}
 \renewcommand{\footrulewidth}{0.4pt}
 \fancyhead[LE,RO]{ \nouppercase \rightmark}
@@ -51,7 +51,7 @@
 	\fancyfoot[C]{\thepage}
 	\rfoot[\thepage]{\thepage}
 	\cfoot[]{}
-	\lfoot[\@stringTitle]{\@stringTitle}
+    \lfoot[\@stringTitle]{\@title}
 	\setlength{\headsep}{1cm}
 }
 
