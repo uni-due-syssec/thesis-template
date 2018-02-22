@@ -278,6 +278,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\RequirePackage{appendix}
 \RequirePackage{hyperxmp}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{fancyhdr}

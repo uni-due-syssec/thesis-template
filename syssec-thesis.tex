@@ -1,4 +1,5 @@
-\documentclass[masterthesis, english]{syssec-thesis} % 				 Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
+% \documentclass[report, english]{syssec-report} % 				 Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
+\documentclass[bachelorthesis, english]{syssec-thesis} % 				 Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
 
 \makeglossaries
 
@@ -22,6 +23,11 @@
 %% load bibs
 \addbibresource{bibliography/bibliography.bib}
 
+\makeatletter
+\newif\ifhbreport
+\@ifclasswith{syssec-report}{report}{\hbreporttrue}{\hbreportfalse}
+\makeatother
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -36,19 +42,14 @@
 \newpage
 \listofillustrations	% List of Figures and List of Tables
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\input{components/acknowledgements.tex}
 
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \input{components/abstract.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\newpage
-\printglossaries
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Reset the page counter for the actual content
@@ -82,16 +83,9 @@
 \input{chapters/chapter06.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\input{components/acknowledgements.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Affidavit (eidesstattliche Erklärung, german and only for uni-due at the moment)
-% Only required for dissertation, masterarbeit and bachelorarbeit
-\cleardoublepage
-\affidavit
-
+\input{components/appendix.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \printbibliography[heading=bibintoc]
