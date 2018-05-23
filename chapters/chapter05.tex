@@ -1,3 +1,18 @@
 \chapter{Some Blind Text}
 
 \Blindtext
+
+As can be seen in Listing~\ref{lst:example}, we have an example here. However,
+this example is not usable with \gls{ROP}.
+
+\begin{lstlisting}[language=C,label={lst:example},caption={Example C Code}]
+int main(int argc, char* argv[], char* env[])
+{
+  for (size_t i = 0; i < 10; i++) {
+    printf("Hello %d\n", i);
+  }
+}
+\end{lstlisting}
+
+
+\Blindtext
