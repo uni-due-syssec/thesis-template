@@ -178,7 +178,7 @@
 	\else
 		\renewcommand{\@arbeitstyp}{Bachelor Project}
 	\fi
-	\renewcommand{\thesection}{\arabic{section}}
+	%\renewcommand{\thesection}{\arabic{section}}
 }
 \DeclareOption{bachelorthesis}{
 	\renewcommand{\@supervisorreviewer}{
