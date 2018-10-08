@@ -178,7 +178,7 @@
 	\else
 		\renewcommand{\@arbeitstyp}{Bachelor Project}
 	\fi
-	%\renewcommand{\thesection}{\arabic{section}}
+	% \renewcommand{\thesection}{\arabic{section}}
 }
 \DeclareOption{bachelorthesis}{
 	\renewcommand{\@supervisorreviewer}{
@@ -285,6 +285,7 @@
 \RequirePackage[hyphens]{url}
 \RequirePackage[defernumbers=true, style=alphabetic, citestyle=alphabetic, giveninits=true, backend=biber, doi=true, url=true, block=ragged, maxnames=6]{biblatex} %
 \RequirePackage{csquotes} % context sensitive quotations; especially for use with biblatex and biber
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \RequirePackage{listings} % ?
 \RequirePackage[scale=3]{ccicons} % creative commons icons
 \RequirePackage{import} % for subimport and relative directory \includegraphics
@@ -390,6 +391,35 @@
 \titlespacing*{\section}{0pt}{1.25\baselineskip}{1\baselineskip}
 \titlespacing*{\subsection}{0pt}{1.25\baselineskip}{1\baselineskip}
 \titlespacing*{\paragraph}{0pt}{1\baselineskip}{1\baselineskip}
+
+
+%% default settings for the listings Package
+\definecolor{lstgreen}{rgb}{0,0.6,0}
+\lstset{
+  basicstyle=\small\ttfamily,
+  commentstyle=\color{lstgreen},
+  keywordstyle=\color{blue},
+  emphstyle=\bfseries\color{DarkGray},
+  stringstyle=\color{RedViolet},
+  numbers=left,
+  numberstyle=\small,
+  %columns=fullflexible,
+  showstringspaces=false,
+  captionpos=b,
+  %xleftmargin=\parindent,
+  %framexleftmargin=\parindent,
+  %xleftmargin=2cm,
+  %linewidth=\textwidth,
+  %xleftmargin=\,
+  %xleftmargin=\listingnumberwidth,
+  %xleftmargin=1.5em,
+  xleftmargin=\parindent,
+  %xrightmargin=5pt,
+  aboveskip=\bigskipamount,
+  %belowskip=\bigskipamount,
+  frame=single,
+  %fancyvrb=true,
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

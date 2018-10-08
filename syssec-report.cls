@@ -23,6 +23,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[acronyms, nomain, style=tree, toc, section=chapter, nogroupskip=true]{glossaries}
+\RequirePackage{etoolbox}
+\preto\chapter\glsresetall
 
 \def\toc@heading{
  	\chapter*{\contentsname}
@@ -30,7 +32,7 @@
 }
 
 % start section on a new page
-\newcommand{\sectionbreak}{\clearpage}
+% \newcommand{\sectionbreak}{\clearpage}
 
 %
 \lfoot[\@stringTitle]{\@title}
@@ -54,5 +56,3 @@
     \lfoot[\@stringTitle]{\@title}
 	\setlength{\headsep}{1cm}
 }
-
-

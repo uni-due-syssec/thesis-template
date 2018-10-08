@@ -1,5 +1,5 @@
-% \documentclass[report, english]{syssec-report} % 				 Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
 \documentclass[bachelorthesis, english]{syssec-thesis} % 				 Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
+% \documentclass[seminarpaper, english]{syssec-report} % 				 Available options: syssec-report (report or seminarpaper) or syssec-thesis (bachelorthesis, masterthesis)
 
 \makeglossaries
 
@@ -24,8 +24,8 @@
 \addbibresource{bibliography/bibliography.bib}
 
 \makeatletter
-\newif\ifhbreport
-\@ifclasswith{syssec-report}{report}{\hbreporttrue}{\hbreportfalse}
+\newif\ifthesis
+\@ifclassloaded{syssec-thesis}{\thesistrue}{\thesisfalse}
 \makeatother
 
 
@@ -44,12 +44,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+\ifthesis
 \input{components/acknowledgements.tex}
-
+\fi
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthesis
 \input{components/abstract.tex}
+\fi
+\glsresetall
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Reset the page counter for the actual content

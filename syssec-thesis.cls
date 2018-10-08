@@ -23,6 +23,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[acronyms, nomain, style=tree, toc, section=chapter, nogroupskip=true]{glossaries}
+\RequirePackage{etoolbox}
+\preto\chapter\glsresetall
 
 
 \def\toc@heading{
