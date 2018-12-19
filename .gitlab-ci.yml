@@ -6,3 +6,20 @@ compile_pdf:
   artifacts:
     paths:
       - syssec-thesis.pdf
+
+
+github_mirror:
+  image:
+    name: ubuntu:latest
+  before_script:
+    - apt-get -q update
+    - apt-get install -q -y git ssh
+    - mkdir -p ~/.ssh/
+    - chmod 700 ~/.ssh
+    - echo "$SSH_DEPLOY_KEY" > ~/.ssh/id_ed25519
+    - chmod 400 ~/.ssh/id_ed25519
+  script: 
+    - git clone --mirror http://gitlab-ci-token:${CI_JOB_TOKEN}@git.uni-due.de/uni-due-syssec/teaching/thesis-template.git repo
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - cd repo && git push --mirror git@github.com:uni-due-syssec/thesis-template.git
