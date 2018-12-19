@@ -2,9 +2,6 @@
 Clone the git and compile with `latexmk`. Heavily inspired by the mas-template. 
 If you run into any issues with this template, open a new issue on github. Thanks.
 
-## TODO List
-* Logo
-
 ## Compile
 
 We recommend you to use the provided Dockerfile to ease your use of this template.

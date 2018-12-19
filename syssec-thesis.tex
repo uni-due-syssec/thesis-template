@@ -1,6 +1,5 @@
 % Available options: syssec-report (report or seminarpaper) or syssec-thesis (bachelorthesis, masterthesis)
 \documentclass[bachelorthesis,english]{syssec-thesis}
-% \documentclass[bachelorthesis, english]{syssec-thesis} % Available options: syssec-report (report) or syssec-thesis (bachelorthesis, masterthesis)
 
 \makeglossaries
 
@@ -25,8 +24,8 @@
 \addbibresource{bibliography/bibliography.bib}
 
 \makeatletter
-\newif\ifhbreport
-\@ifclasswith{report}{syssec-report}{\hbreporttrue}{\hbreportfalse}
+\newif\ifthesis
+\@ifclassloaded{syssec-thesis}{\thesistrue}{\thesisfalse}
 \makeatother
 
 
@@ -45,12 +44,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+\ifthesis
 \input{components/acknowledgements.tex}
-
+\fi
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthesis
 \input{components/abstract.tex}
+\fi
 \glsresetall
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
