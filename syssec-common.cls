@@ -180,6 +180,7 @@
 	\fi
 	\renewcommand{\thesection}{\arabic{section}}
 }
+
 \DeclareOption{bachelorthesis}{
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
@@ -195,8 +196,8 @@
 	\else
 		\renewcommand{\@arbeitstyp}{Bachelor Thesis}
 	\fi
-	\renewcommand{\thesection}{\arabic{section}}
 }
+
 \DeclareOption{masterproject}{
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
@@ -215,6 +216,7 @@
 	\fi
 	\renewcommand{\thesection}{\arabic{section}}
 }
+
 \DeclareOption{masterthesis}{
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
@@ -235,7 +237,7 @@
 \DeclareOption{seminarpaper}{
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
-			\small \@stringSupervisor: & \small \@supervisor \\ %\hline
+			%\small \@stringSupervisor: & \small \@supervisor \\ %\hline
 			% \small \@stringReviewerA: &  \small \@reviewerA \\
 			% \small \@stringReviewerB: & \small \@reviewerB \\
 			\small \@stringDegreeCourse: & \small \@degreecourse \\ %\hline
@@ -249,12 +251,12 @@
 		\renewcommand{\@arbeitstyp}{Seminar Paper}
 	\fi
 	\renewcommand{\thesection}{\arabic{section}}
-
 }
+
 \DeclareOption{report}{
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
-			\small \@stringSupervisor: & \small \@supervisor \\ %\hline
+			%\small \@stringSupervisor: & \small \@supervisor \\ %\hline
 			% \small \@stringReviewer: &  \small \@reviewerA \\
 			% \small & \small \@reviewerB \\
 			\small \@stringDegreeCourse: & \small \@degreecourse \\ %\hline
@@ -376,13 +378,13 @@
 \titleformat{\section}{\relax}{\bfseries\textsc{\LARGE\thesection}}{1em}{\bfseries\LARGE\scshape}
 
 % subsections
-\titleformat{\subsection}{\relax}{\large\thesubsection}{1em}{\large\itshape}
+\titleformat{\subsection}{\relax}{\bfseries\large\thesubsection}{1em}{\large\bfseries}
 
 % subsubsections
-\titleformat{\subsubsection}{\relax}{\normalsize\thesubsubsection}{1em}{\normalsize\itshape}
+\titleformat{\subsubsection}{\relax}{\normalsize\thesubsubsection}{1em}{\normalsize}
 
 % paragraphs
-\titleformat{\paragraph}[hang]{\normalfont\normalsize}{\theparagraph}{0pt}{\scshape}
+\titleformat{\paragraph}[hang]{\normalfont\normalsize}{\theparagraph}{0pt}{\itshape}
 
 % descriptionlabels
 \renewcommand{\descriptionlabel}[1]{\hspace*{\labelsep}\textsc{#1}}   % spacedlowsmallcaps textit textsc
@@ -432,7 +434,6 @@
 
 	\begin{titlepage}
 
-
 	\@titlelogos
 
 	\begin{center}
@@ -441,14 +442,17 @@
 
 	\linespread{1.6}\selectfont
 
-	{\Huge\bfseries\textsc{\@arbeitstyp}}\\[1.5cm]
+	{\bfseries\textsc{\@arbeitstyp}}\\[1.5cm]
 
-	{\@stringTitle\\[2mm]
+	{%\@stringTitle\\[2mm]
 	\huge\bfseries\textsc{\centering\@title}}\\Vorgelegt der Fakultät für Wirtschaftswissenschaften\\der Universität Duisburg-Essen (Campus Essen)\\[2cm]
 	\linespread{1.05}\selectfont % reset linespread back to the document's default
 
-	{\@stringAuthor\\
-	\bfseries \@author}\\\@authoraddress\\\@stringMatrikelnumber~{\bfseries \@matrikelnumber}\\[3cm]
+	\@stringAuthor\\
+	{\bfseries \@author}\\
+  \@authoraddress\\
+  \@stringMatrikelnumber~{\bfseries\@matrikelnumber}\\
+  \vfill
 
 	%\scalebox{1.1} {
 		\@supervisorreviewer

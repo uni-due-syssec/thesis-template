@@ -11,7 +11,7 @@
 % load base class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\LoadClass[openright,titlepage,numbers=noenddot,cleardoublepage=empty,BCOR=5mm,a4paper,fontsize=12pt,twoside, DIV=calc]{scrreprt}
+\LoadClass[openright,titlepage,numbers=noenddot,cleardoublepage=empty,BCOR=5mm,a4paper,fontsize=12pt,oneside,DIV=calc]{scrreprt}
 
 \ProvidesClass{classes/syssec-thesis}[2018/01/04 Uni-DUE SYSSEC thesis class]
 
