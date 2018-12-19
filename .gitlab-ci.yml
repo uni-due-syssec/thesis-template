@@ -1,0 +1,8 @@
+compile_pdf:
+  image: 
+    name: aergus/latex
+  script:
+    - latexmk -pdf syssec-thesis.tex
+  artifacts:
+    paths:
+      - syssec-thesis.pdf
