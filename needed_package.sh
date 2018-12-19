@@ -1,9 +1,10 @@
 #! /bin/bash
 # installs missing packages from the .cls files with tlmgr
 
-echo "needed packages:"
-
-cat *.cls | sed -n 's~^[^%]*\\RequirePackage[^{]*{\([^}]*\)}.*$~\1.sty~p' | sort -u
+cat *.cls \
+    | sed -n 's~^[^%]*\\RequirePackage[^{]*{\([^}]*\)}.*$~\1.sty~p' \
+    | sort -u \
+    | sed 's/.sty//g'
 
 
 # where you can find the required packages in apt
