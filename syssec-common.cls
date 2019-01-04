@@ -33,7 +33,7 @@
 
 
 %% German
-\ifgerman
+\if{germantrue}
 	\renewcommand{\@supervisor}{<Betreuername per \textbackslash supervisor setzen>}
 	\renewcommand{\@reviewerA}{<Gutachtername 1 per \textbackslash reviewerA setzen>}
 	\renewcommand{\@reviewerB}{<Gutachtername 2 per \textbackslash reviewerB setzen>}
