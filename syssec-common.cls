@@ -2,11 +2,57 @@
 % translations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newif\ifgerman\germantrue
-
+\newif\ifgerman
+% default to german
+\germantrue
+% add package options:
+\DeclareOption{german}{
+	\germantrue
+}
 \DeclareOption{english}{
 	\germanfalse
 }
+
+% configurations
+\newif\ifbachelorproject
+\bachelorprojectfalse
+\DeclareOption{bachelorproject}{
+  \bachelorprojecttrue
+}
+
+\newif\ifbachelorthesis
+\bachelorthesisfalse
+\DeclareOption{bachelorthesis}{
+  \bachelorthesistrue
+}
+
+\newif\ifmasterproject
+\masterprojectfalse
+\DeclareOption{masterproject}{
+  \masterprojecttrue
+}
+
+\newif\ifmasterthesis
+\masterthesisfalse
+\DeclareOption{masterthesis}{
+  \masterthesistrue
+}
+
+\newif\ifseminarpaper
+\seminarpaperfalse
+\DeclareOption{seminarpaper}{
+  \seminarpapertrue
+}
+
+\newif\ifreport
+\reportfalse
+\DeclareOption{report}{
+  \reporttrue
+}
+
+% process options
+\ProcessOptions\relax
+
 
 %% Set defaults for English language
 \newcommand{\@supervisor}{}
@@ -162,7 +208,7 @@
 
 \newcommand{\@arbeitstyp}{<Art der Arbeit (Option f\"ur \textbackslash documentclass setzen)>}
 
-\DeclareOption{bachelorproject}{
+\ifbachelorproject
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
 			\small \@stringSupervisor: & \small \@supervisor \\ %\hline
@@ -179,9 +225,9 @@
 		\renewcommand{\@arbeitstyp}{Bachelor Project}
 	\fi
 	% \renewcommand{\thesection}{\arabic{section}}
-}
+\fi
 
-\DeclareOption{bachelorthesis}{
+\ifbachelorthesis
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
 			\small \@stringReviewerA: &  \small \@reviewerA \\
@@ -196,9 +242,9 @@
 	\else
 		\renewcommand{\@arbeitstyp}{Bachelor Thesis}
 	\fi
-}
+\fi
 
-\DeclareOption{masterproject}{
+\ifmasterproject
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
 			\small \@stringSupervisor: & \small \@supervisor \\ %\hline
@@ -215,9 +261,9 @@
 		\renewcommand{\@arbeitstyp}{Master Project}
 	\fi
 	\renewcommand{\thesection}{\arabic{section}}
-}
+\fi
 
-\DeclareOption{masterthesis}{
+\ifmasterthesis
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
 			\small \@stringReviewerA: &  \small \@reviewerA \\
@@ -232,9 +278,9 @@
 	\else
 		\renewcommand{\@arbeitstyp}{Master Thesis}
 	\fi
-}
+\fi
 
-\DeclareOption{seminarpaper}{
+\ifseminarpaper
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
 			%\small \@stringSupervisor: & \small \@supervisor \\ %\hline
@@ -251,9 +297,9 @@
 		\renewcommand{\@arbeitstyp}{Seminar Paper}
 	\fi
 	\renewcommand{\thesection}{\arabic{section}}
-}
+\fi
 
-\DeclareOption{report}{
+\ifreport
 	\renewcommand{\@supervisorreviewer}{
 		\begin{tabular}{lp{8cm}}%\hline
 			%\small \@stringSupervisor: & \small \@supervisor \\ %\hline
@@ -270,9 +316,8 @@
 		\renewcommand{\@arbeitstyp}{Project Report}
 	\fi
 	\renewcommand{\thesection}{\arabic{section}}
-}
+\fi
 
-\ProcessOptions\relax
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
