@@ -1,8 +1,28 @@
 # SYSSEC thesis-template
-Clone the git and compile with `latexmk`. Heavily inspired by the mas-template. 
-If you run into any issues with this template, open a new issue on github. Thanks.
 
-## Compile
+Clone the git and compile with `latexmk`. Heavily inspired by the mas-template.
+If you run into any issues with this template, open a new issue on github or
+gitlab. Thanks.
+
+
+## How to use this template
+
+You can use this template to write your thesis or to write a report. 
+Just change the option in the `syssec-thesis.tex` preamble.
+The `syssec-thesis.tex` should only be used to glue together your document. 
+Your writings should be put in seperate tex files and then use the 
+`\input{path/to/.tex}` latex command to include the various files. 
+This keeps your project structured and tidy.
+
+You are free to modify this template, as much as you like.
+
+If you want to compile your files, just invoke `latexmk` which will do the work for you. 
+To clean up, just use `latexmk -c`. This will leave only the PDF file in the folder. 
+
+
+## Installation
+
+### Docker
 
 We recommend you to use the provided Dockerfile to ease your use of this template.
 
@@ -23,34 +43,32 @@ We also provide you with the `compile.sh` script, which automatically compiles a
 To use the script just use `$ sh compile.sh syssec-thesis`.
 
 
-## Packages you need to install to use the template
+### Debian Package Dependencies
 
-If you are on a Debian based system, install these packages from the repositories
+If you are on a Debian based system, install these packages from the repositories:
 
-* texlive-base
-* texlive-latex-recommended
-* texlive-latex-extra
-* texlive-science
-* texlive-bibtex-extra
-* latexmk
-* biber
+```sh
+apt install -y \
+    texlive-base \
+    texlive-latex-recommended \
+    texlive-latex-extra \
+    texlive-science \
+    texlive-bibtex-extra \
+    latexmk \
+    biber \
+```
 
-You will also need the `ccicons` and `tracklang` package. Both can be found in the tlmgr repositories.
+You will also need the `ccicons` and `tracklang` package. 
+Both can be found in the tlmgr repositories.
 
-The `needed_package.sh` script will print you the used packages.
+The `needed_package.sh` script will print a list of all required TeX packages.
 
-```bash
-$tlmgr install missingpackage.sty
+<!--
+whats up with this?
+
+```sh
+tlmgr install missingpackage.sty
 ```
 
 If tlmgr can not find the right packages, you can download them manually. 
-
-## How to use this template
-You can use this template to write your thesis or to write a report. Just change the option in the `syssec-thesis.tex` preamble.
-The `syssec-thesis.tex` should only be used to glue together your document. Your writings should be put in seperate tex files. Use the `\input{path/to/.tex}` command to assemble your document. This keeps your project structured and tidy.
-
-Every `.tex` file contains small manuals on how to use it.
-
-You are free to modify this template.
-
-If you want to compile your files, just invoke `latexmk` which will do the work for you. To clean up, just use `latexmk -c`. This will leave only the PDF file in the folder. 
+-->
