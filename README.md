@@ -36,10 +36,9 @@ This needs only to be done once.
 2. Invoke `latexmk` in the docker container with   
 `$ docker run --rm -v $(pwd):/document/:z uni-due-syssec/tex-builder /bin/sh -c 'latexmk' `
 
-We also provide you with the `compile.sh` script, which automatically compiles you document for you.
+We also provide you with the `compile.sh` script, which automatically compiles your document for you.
 
-To use the script just use `$ sh compile.sh`.
-
+Invoke the script with `$ sh compile.sh`.
 
 ### Debian Package Dependencies
 
