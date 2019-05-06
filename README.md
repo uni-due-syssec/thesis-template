@@ -28,19 +28,17 @@ We recommend you to use the provided Dockerfile to ease your use of this templat
 
 0. [install Docker](https://docs.docker.com/install/)
 
-1. Build the setup container with `$ docker build -t syssec/tex-setup -f Dockerfile.setup .` This needs only to be done once.
+1. Build the setup container with  
+`$ docker build -t uni-due-syssec/tex-builder -f Dockerfile .` (The dot is part of the command!)  
+This needs only to be done once.
+    
 
-2. Now build the main container with `$ docker build -t syssec/tex -f Dockerfile .` This needs to be repeated after every change in your file
+2. Invoke `latexmk` in the docker container with   
+`$ docker run --rm -v $(pwd):/document/:z uni-due-syssec/tex-builder /bin/sh -c 'latexmk' `
 
-3. Invoke `latexmk` in the docker container with 
-`$ docker run syssec/tex latexmk [flags] file-to-compile`
+We also provide you with the `compile.sh` script, which automatically compiles you document for you.
 
-4. Copy your compiled pdf from the container to the host system with 
-`docker cp container-id:/syssec-build/file-to-compile.pdf`. You get the container ID from the last built container with `$ docker ps -alq`
-
-We also provide you with the `compile.sh` script, which automatically compiles and copies the template for you. So you dont have to bother with step 2 to 4. Step 1 remains **mandatory**.
-
-To use the script just use `$ sh compile.sh syssec-thesis`.
+To use the script just use `$ sh compile.sh`.
 
 
 ### Debian Package Dependencies

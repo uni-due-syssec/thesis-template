@@ -20,7 +20,7 @@ ARG MAKE=make
 ARG PANDOC=pandoc 
 ARG PYGMENTS=python-pygments 
 
-env DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update && \
     apt-get install -y --no-install-recommends --auto-remove \
     # install full texlive. Slimming down would be nice but seems a bit of a
@@ -54,7 +54,7 @@ RUN apt-get -q update && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-ARG FILENAME=syssec-thesis.tex
+# ARG FILENAME=syssec-thesis.tex
 
 # in case we don't install texlive-full, we need to install some more package,
 # which we can do with tlmgr. Somehow this doesn't work though.
@@ -72,4 +72,4 @@ USER "$USERNAME"
 VOLUME ["/document"]
 WORKDIR "/document"
 
-CMD latexmk $FILENAME
+# CMD latexmk $FILENAME
