@@ -158,20 +158,22 @@
 		\let\clearpage\relax
 		\let\cleardoublepage\relax
 		\phantomsection
-		\addcontentsline{toc}{chapter}{Figures}%
 		\ifgerman
+			\addcontentsline{toc}{chapter}{Abbildungen}%
 			\chapter*{Abbildungen}%
 		\else
+			\addcontentsline{toc}{chapter}{Figures}%
 			\chapter*{Figures}
 		\fi
 
 		\@starttoc{lof}%
 		\bigskip
 		\phantomsection
-		\addcontentsline{toc}{chapter}{Tables}%
 		\ifgerman
+			\addcontentsline{toc}{chapter}{Tabellen}%
 			\chapter*{Tabellen}%
 		\else
+			\addcontentsline{toc}{chapter}{Tables}%
 			\chapter*{Tables}
 		\fi
 		\@starttoc{lot}
@@ -185,13 +187,14 @@
 
 \newcommand{\affidavit}{
     \thispagestyle{empty}
-    Ich versichere an Eides statt durch meine Unterschrift, dass ich die vorstehende Arbeit selbst\"andig und ohne fremde Hilfe angefertigt und alle Stellen, die ich w\"ortlich oder ann\"ahernd  w\"ortlich  aus  Ver\"offentlichungen  entnommen  habe,  als  solche  kenntlich  gemacht  habe,  mich  auch  keiner  anderen  als  der  angegebenen  Literatur  oder  sonstiger Hilfsmittel bedient habe. Die Arbeit hat in dieser oder \"ahnlicher Form noch keiner anderen Pr\"ufungsbeh\"orde vorgelegen.
+	\begin{german}
+    Ich versichere an Eides statt durch meine Unterschrift, dass ich die vorstehende Arbeit selbständig und ohne fremde Hilfe angefertigt und alle Stellen, die ich wörtlich oder annähernd wörtlich aus Veröffentlichungen entnommen habe, als solche kenntlich gemacht habe, mich auch keiner anderen als der angegebenen Literatur oder sonstiger Hilfsmittel bedient habe. Die Arbeit hat in dieser oder ähnlicher Form noch keiner anderen Prüfungsbehöde vorgelegen.
 
     \vspace{1.5cm}
 
     \noindent\makebox[2.5in]{\hrulefill}\\
     \small \@author, \@location, den \@handoverdate
-
+    \end{german}
 	\newpage
 }
 
@@ -276,7 +279,7 @@
 	\ifgerman
 		\renewcommand{\@arbeitstyp}{Masterarbeit}
 	\else
-		\renewcommand{\@arbeitstyp}{Master Thesis}
+		\renewcommand{\@arbeitstyp}{Master's Thesis}
 	\fi
 \fi
 
@@ -318,12 +321,21 @@
 	\renewcommand{\thesection}{\arabic{section}}
 \fi
 
+%%% Babel
 
+\RequirePackage[english,german,ngerman]{babel}
+\newenvironment{german}{\begin{otherlanguage}{ngerman}}{\end{otherlanguage}}
+\newenvironment{english}{\begin{otherlanguage}{english}}{\end{otherlanguage}}
+% Hauptsprache einstellen
+\ifgerman
+	\main@language{ngerman}
+\else
+	\main@language{english}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % load packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \RequirePackage{appendix}
 \RequirePackage{hyperxmp}
@@ -368,6 +380,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% csquotes
+\MakeOuterQuote{"}
 
 %%% colors
 \definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}

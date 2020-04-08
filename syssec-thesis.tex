@@ -14,13 +14,13 @@
 \authoraddress{Musterstr.~90\\12345 Essen}
 \matrikelnumber{2251234}
 \title{Titel der Arbeit}
-\supervisor{Univ.-Prof.~Dipl.-Ing.~Dr.~Betreuer~Name}
-\reviewerA{Reviewer~A}
-\reviewerB{Reviewer~B}
-\degreecourse{Angewandte Informatik~---~Network Engineering}
+\supervisor{Univ.-Prof.\ Dipl.-Ing.\ Dr.\ Betreuer Name}
+\reviewerA{Reviewer A}
+\reviewerB{Reviewer B}
+\degreecourse{Angewandte Informatik -- Software and Network Engineering}
 \location{Essen}
-\handoverdate{23.10.2016}
-\semester{Wintersemester~2017/2018}
+\handoverdate{23.10.2020}
+\semester{Wintersemester 2020/2021}
 
 
 %% load bibs
@@ -40,20 +40,21 @@
 
 \cleardoublepage
 \pagenumbering{Roman}
-\addcontentsline{toc}{chapter}{Contents}%
+%\addcontentsline{toc}{chapter}{Contents}%
 \tableofcontents		% Table of Contents
 \newpage
 \listofillustrations	% List of Figures and List of Tables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
 \ifthesis
+\newpage
 \input{components/acknowledgements.tex}
 \fi
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifthesis
+\newpage
 \input{components/abstract.tex}
 \fi
 \glsresetall
@@ -90,9 +91,18 @@
 \input{chapters/chapter06.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newpage
 \input{components/appendix.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printglossaries
+
+% Affidavit (eidesstattliche Erklärung, german and only for uni-due at the moment)
+% Only required for dissertation, masterarbeit and bachelorarbeit
+\ifthesis
+\cleardoublepage
+\affidavit
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \printbibliography[heading=bibintoc]
