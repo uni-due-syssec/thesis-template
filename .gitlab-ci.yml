@@ -1,6 +1,7 @@
 compile_pdf:
   image: 
     name: aergus/latex
+    entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
   script:
     - latexmk -pdf syssec-thesis.tex
   artifacts:
@@ -11,6 +12,7 @@ compile_pdf:
 github_mirror:
   image:
     name: ubuntu:latest
+    entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
   before_script:
     - apt-get -q update
     - apt-get install -q -y git ssh
