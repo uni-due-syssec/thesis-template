@@ -14,7 +14,6 @@ github_mirror:
     name: ubuntu:latest
     entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
   before_script:
-    - apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
     - apt-get -q update
     - apt-get install -q -y git ssh
     - mkdir -p ~/.ssh/
