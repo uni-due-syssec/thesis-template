@@ -1,18 +1,19 @@
 compile_pdf:
-  image: 
+  image:
     name: aergus/latex
-    entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
+    entrypoint:
+      ["/bin/bash", "-c", "ln -snf /bin/bash /bin/sh && /bin/bash -c $0"]
   script:
-    - latexmk -pdf syssec-thesis.tex
+    - latexmk -pdf main.tex
   artifacts:
     paths:
-      - syssec-thesis.pdf
-
+      - main.pdf
 
 github_mirror:
   image:
     name: ubuntu:latest
-    entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
+    entrypoint:
+      ["/bin/bash", "-c", "ln -snf /bin/bash /bin/sh && /bin/bash -c $0"]
   before_script:
     - apt-get -q update
     - apt-get install -q -y git ssh
@@ -21,7 +22,7 @@ github_mirror:
     - echo "$SSH_DEPLOY_KEY" > ~/.ssh/id_ed25519
     - chmod 400 ~/.ssh/id_ed25519
     - printf "Host github.com\nUser git\nIdentityFile ~/.ssh/id_ed25519\nIdentitiesOnly yes\nStrictHostKeyChecking no\nUserKnownHostsFile /dev/null" > ~/.ssh/config
-  script: 
+  script:
     - git clone --mirror http://gitlab-ci-token:${CI_JOB_TOKEN}@git.uni-due.de/uni-due-syssec/teaching/thesis-template.git repo
     - git config --global user.name "${GITLAB_USER_NAME}"
     - git config --global user.email "${GITLAB_USER_EMAIL}"

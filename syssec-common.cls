@@ -2,17 +2,6 @@
 % translations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newif\ifgerman
-% default to german
-\germantrue
-% add package options:
-\DeclareOption{german}{
-	\germantrue
-}
-\DeclareOption{english}{
-	\germanfalse
-}
-
 % configurations
 \newif\ifbachelorproject
 \bachelorprojectfalse
@@ -54,7 +43,6 @@
 \ProcessOptions\relax
 
 
-%% Set defaults for English language
 \newcommand{\@supervisor}{}
 \newcommand{\@reviewerA}{}
 \newcommand{\@reviewerB}{}
@@ -77,47 +65,24 @@
 \newcommand{\@stringHandoverdate}{}
 \newcommand{\@stringSemester}{}
 
+\renewcommand{\@supervisor}{<Set supervisor name with \textbackslash supervisor>}
+\renewcommand{\@reviewerA}{<Set name of 1st supervisor with \textbackslash reviewerA>}
+\renewcommand{\@reviewerB}{<Set name of 2nd supervisor with \textbackslash reviewerB>}
+\renewcommand{\@fieldofdissertation}{<Set field of dissertation with \textbackslash fieldofdissertation>}
+\renewcommand{\@degree}{<Set intended degree with \textbackslash degree>}
+\renewcommand{\@location}{<Set location of thesis with \textbackslash location>}
+\renewcommand{\@degreecourse}{<Set course with \textbackslash degreecourse>}
 
-%% German
-\ifgerman
-	\renewcommand{\@supervisor}{<Betreuername per \textbackslash supervisor setzen>}
-	\renewcommand{\@reviewerA}{<Gutachtername 1 per \textbackslash reviewerA setzen>}
-	\renewcommand{\@reviewerB}{<Gutachtername 2 per \textbackslash reviewerB setzen>}
-	\renewcommand{\@fieldofdissertation}{<Dissertationsgebiet per \textbackslash fieldofdissertation setzen>}
-	\renewcommand{\@degree}{<Angestrebten Grad per \textbackslash degree setzen>}
-	\renewcommand{\@location}{<Ort der Arbeit per \textbackslash location setzen>}
-	\renewcommand{\@degreecourse}{<Studiengang per \textbackslash degreecourse setzen>}
-
-	\renewcommand{\@stringTitle}{Titel}
-	\renewcommand{\@stringAuthor}{von:}
-	\renewcommand{\@stringMatrikelnumber}{Matrikelnummer:}
-	\renewcommand{\@stringDegree}{Angestrebter akademischer Grad}
-	\renewcommand{\@stringDegreeCourse}{Studiengang}
-	\renewcommand{\@stringSupervisor}{Betreuer}
-	\renewcommand{\@stringReviewerA}{Erstgutachter}
-	\renewcommand{\@stringReviewerB}{Zweitgutachter}
-	\renewcommand{\@stringHandoverdate}{Abgabe}
-	\renewcommand{\@stringSemester}{Studiensemester}
-\else
-	\renewcommand{\@supervisor}{<Set supervisor name with \textbackslash supervisor>}
-	\renewcommand{\@reviewerA}{<Set name of 1st supervisor with \textbackslash reviewerA>}
-	\renewcommand{\@reviewerB}{<Set name of 2nd supervisor with \textbackslash reviewerB>}
-	\renewcommand{\@fieldofdissertation}{<Set field of dissertation with \textbackslash fieldofdissertation>}
-	\renewcommand{\@degree}{<Set intended degree with \textbackslash degree>}
-	\renewcommand{\@location}{<Set location of thesis with \textbackslash location>}
-	\renewcommand{\@degreecourse}{<Set course with \textbackslash degreecourse>}
-
-	\renewcommand{\@stringTitle}{Title}
-	\renewcommand{\@stringAuthor}{by:}
-	\renewcommand{\@stringMatrikelnumber}{Matriculation number:}
-	\renewcommand{\@stringDegree}{Desired degree}
-	\renewcommand{\@stringDegreeCourse}{Course of study}
-	\renewcommand{\@stringSupervisor}{Supervisor}
-	\renewcommand{\@stringReviewerA}{First reviewer}
-	\renewcommand{\@stringReviewerB}{Second reviewer}
-	\renewcommand{\@stringHandoverdate}{Date of submission}
-	\renewcommand{\@stringSemester}{Semester}
-\fi
+\renewcommand{\@stringTitle}{Title}
+\renewcommand{\@stringAuthor}{by:}
+\renewcommand{\@stringMatrikelnumber}{Matriculation number:}
+\renewcommand{\@stringDegree}{Desired degree}
+\renewcommand{\@stringDegreeCourse}{Course of study}
+\renewcommand{\@stringSupervisor}{Supervisor}
+\renewcommand{\@stringReviewerA}{First reviewer}
+\renewcommand{\@stringReviewerB}{Second reviewer}
+\renewcommand{\@stringHandoverdate}{Date of submission}
+\renewcommand{\@stringSemester}{Semester}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,31 +123,21 @@
 		\let\clearpage\relax
 		\let\cleardoublepage\relax
 		\phantomsection
-		\ifgerman
-			\addcontentsline{toc}{chapter}{Abbildungen}%
-			\chapter*{Abbildungen}%
-		\else
-			\addcontentsline{toc}{chapter}{Figures}%
-			\chapter*{Figures}
-		\fi
+		\addcontentsline{toc}{chapter}{Figures}%
+		\chapter*{Figures}
 
 		\@starttoc{lof}%
 		\bigskip
 		\phantomsection
-		\ifgerman
-			\addcontentsline{toc}{chapter}{Tabellen}%
-			\chapter*{Tabellen}%
-		\else
-			\addcontentsline{toc}{chapter}{Tables}%
-			\chapter*{Tables}
-		\fi
+		\addcontentsline{toc}{chapter}{Tables}%
+		\chapter*{Tables}
 		\@starttoc{lot}
     \endgroup}
 
 \newcommand{\@titlelogos}{
-	\includegraphics[height=2cm]{graphics/uni-due-logo-cmyk.eps}
+	\includegraphics[height=2cm]{graphics/.template/uni-due-logo-cmyk.eps}
 	\hfill
-	% \includegraphics[height=2cm]{graphics/bug-sec.png}
+	\includegraphics[height=2cm]{graphics/.template/syssec-logo.eps}
 }
 
 \newcommand{\affidavit}{
@@ -222,11 +177,7 @@
 		\end{tabular}
 	}
 
-	\ifgerman
-		\renewcommand{\@arbeitstyp}{Bachelorprojekt}
-	\else
-		\renewcommand{\@arbeitstyp}{Bachelor Project}
-	\fi
+	\renewcommand{\@arbeitstyp}{Bachelor Project}
 	% \renewcommand{\thesection}{\arabic{section}}
 \fi
 
@@ -240,11 +191,7 @@
 		\end{tabular}
 	}
 
-	\ifgerman
-		\renewcommand{\@arbeitstyp}{Bachelorarbeit}
-	\else
-		\renewcommand{\@arbeitstyp}{Bachelor Thesis}
-	\fi
+	\renewcommand{\@arbeitstyp}{Bachelor Thesis}
 \fi
 
 \ifmasterproject
@@ -258,11 +205,7 @@
 		\end{tabular}
 	}
 
-	\ifgerman
-		\renewcommand{\@arbeitstyp}{Masterprojekt}
-	\else
-		\renewcommand{\@arbeitstyp}{Master Project}
-	\fi
+	\renewcommand{\@arbeitstyp}{Master Project}
 	\renewcommand{\thesection}{\arabic{section}}
 \fi
 
@@ -276,11 +219,7 @@
 		\end{tabular}
 	}
 
-	\ifgerman
-		\renewcommand{\@arbeitstyp}{Masterarbeit}
-	\else
-		\renewcommand{\@arbeitstyp}{Master's Thesis}
-	\fi
+	\renewcommand{\@arbeitstyp}{Master's Thesis}
 \fi
 
 \ifseminarpaper
@@ -294,11 +233,7 @@
 		\end{tabular}
 	}
 
-	\ifgerman
-		\renewcommand{\@arbeitstyp}{Seminararbeit}
-	\else
-		\renewcommand{\@arbeitstyp}{Seminar Paper}
-	\fi
+	\renewcommand{\@arbeitstyp}{Seminar Paper}
 	\renewcommand{\thesection}{\arabic{section}}
 \fi
 
@@ -313,11 +248,7 @@
 		\end{tabular}
 	}
 
-	\ifgerman
-		\renewcommand{\@arbeitstyp}{Projektbericht}
-	\else
-		\renewcommand{\@arbeitstyp}{Project Report}
-	\fi
+	\renewcommand{\@arbeitstyp}{Project Report}
 	\renewcommand{\thesection}{\arabic{section}}
 \fi
 
@@ -327,11 +258,7 @@
 \newenvironment{german}{\begin{otherlanguage}{ngerman}}{\end{otherlanguage}}
 \newenvironment{english}{\begin{otherlanguage}{english}}{\end{otherlanguage}}
 % Hauptsprache einstellen
-\ifgerman
-	\main@language{ngerman}
-\else
-	\main@language{english}
-\fi
+\main@language{english}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % load packages

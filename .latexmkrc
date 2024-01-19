@@ -1,7 +1,9 @@
 $recorder = 1;
 $pdf_mode = 1;
 $bibtex_use = 2;
-$pdflatex = "pdflatex %O %S";
+
+# show line error
+$pdflatex = 'pdflatex -shell-escape -file-line-error --synctex=-1 %O %S';
 
 # auto-invoke makeglossaries
 add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
@@ -19,3 +21,5 @@ sub run_makeglossaries {
 push @generated_exts, 'glo', 'gls', 'glg';
 push @generated_exts, 'acn', 'acr', 'alg';
 push @generated_exts, 'run.xml', 'ist';
+
+@default_files = ('main.tex');
