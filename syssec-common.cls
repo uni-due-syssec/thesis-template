@@ -265,7 +265,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{appendix}
-\RequirePackage{hyperxmp}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{fancyhdr}
 \RequirePackage[hyphens]{url}
@@ -285,6 +284,7 @@
 \RequirePackage{enumitem} % inline lists, etc.
 
 \RequirePackage[colorlinks, unicode=true]{hyperref}
+\RequirePackage{hyperxmp}
 \hypersetup{pdfencoding=auto, colorlinks=true, linktocpage=true, breaklinks=true, bookmarksnumbered, bookmarksopen=true,bookmarksopenlevel=1, pdfhighlight=/O, urlcolor=webbrown, linkcolor=linkblue, citecolor=webgreen}
 \RequirePackage{textcomp} % extra symbols; used for euro and copyright symbol
 \RequirePackage[load-configurations={abbreviations,binary}]{siunitx}
